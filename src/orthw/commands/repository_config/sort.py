@@ -16,18 +16,36 @@
 # License-Filename: LICENSE
 from __future__ import annotations
 
-from rich import print
+from pathlib import Path
 
+import click
+
+from orthw import config
+from orthw.utils import logging
 from orthw.utils.cmdgroups import repository_group
-
+from orthw.utils.process import run
+from orthw.utils.required import require_initialized
 
 def sort_() -> None:
-    print("\n[sandy_brown]This command is not implemented yet.[/sandy_brown]")
+    require_initialized()
+
+    repository_configuration_file: Path = config.repository_configuration_file.as_posix()
+
+    args: list[str] = [
+        "orth",
+        "repository-configuration",
+        "sort",
+        repository_configuration_file
+    ]
+
+    run(args=args)
 
 
 @repository_group.command(
     name="sort",
+    help="Alphabetically sorts the excludes and curation entries in the ort.yml file within orthw initialized directory.",
     options_metavar="REPOSITORY_CONFIG",
+    short_help="Alphabetically sorts entries in the ort.yml file within orthw initialized directory."
 )
 def __sort() -> None:
     sort_()

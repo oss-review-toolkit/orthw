@@ -39,6 +39,7 @@ def copyrights(package_id: str = "") -> None:
     ort_config_copyright_garbage_file: Path = config.ort_config_copyright_garbage_file
     ort_config_package_configuration_dir: Path = config.ort_config_package_configuration_dir
     scan_result_file: Path = config.scan_result_file
+    
     if not scan_result_file or not ort_config_package_configuration_dir or not ort_config_copyright_garbage_file:
         logging.error("Invalid configuration.")
         return
@@ -63,8 +64,10 @@ def copyrights(package_id: str = "") -> None:
 
 
 @command_group.command(
-    name="copyrigths",
+    name="copyrights",
+    help="Lists the copyright findings within initialized ORT result file.",
     options_metavar="SCAN_CONTEXT",
+    short_help="Lists the copyright findings within initialized ORT result file."
 )
 @click.argument("package-id", type=str, default="")
 def __copyrights(package_id: str) -> None:

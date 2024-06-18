@@ -27,7 +27,11 @@ def report() -> None:
 
 @command_group.command(
     name="report",
+    help="""
+        Present Analyzer, Scanner and Evaluator results in various formats such as CycloneDX, SPDX or HTML.
+    """,
     options_metavar="SCAN_CONTEXT",
+    short_help="Present Analyzer, Scanner and Evaluator results in various formats such as CycloneDX, SPDX or HTML."
 )
 def __report() -> None:
     report()

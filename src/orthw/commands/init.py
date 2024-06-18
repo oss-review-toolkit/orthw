@@ -58,7 +58,7 @@ def init(target_url: str) -> int:
         logging.error(f"Unable to create output file {target_url_file.as_posix()}.")
         return 1
 
-    # Retrieve target scan result file
+    # Retrieve target ORT result file
     parsed_url = urlparse(target_url)
     if not parsed_url.scheme or parsed_url.scheme not in ["http", "https"] or not parsed_url.netloc:
         logging.error(f"Cannot retrieve {target_url}.")
@@ -108,8 +108,21 @@ def init(target_url: str) -> int:
 
 @command_group.command(
     name="init",
+    help="""
+        Initialize a directory with an ORT result file so orthw operate on it. 
+        The `init` command accepts ORT result file from an URL or local file as shown below:
+
+        orthw init https://raw.githubusercontent.com/oss-review-toolkit/orthw/main/examples/npm-mime-types-2.1.26-scan-result.json
+
+        orthw init file:///home/ort-user/ort-scans/mime-types-orthw/ort-result.yml
+
+        The ORT result file can be `.json` or `.yml` file and maybe compressed with XZ as `ort-result.xz`.
+    """,
+    no_args_is_help="True",
     options_metavar="SCAN_CONTEXT",
+    short_help="Initialize a directory with an ORT result file."
 )
+
 @click.argument("target_url")
 def __init(target_url: str) -> None:
     init(target_url=target_url)

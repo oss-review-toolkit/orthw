@@ -26,7 +26,7 @@ def check_advisories() -> None:
 @command_group.command(
     name="check_advisories",
     options_metavar="SCAN_CONTEXT",
-    short_help="Check the advisories.",
+    short_help="Check packages in ORT result for known security vulnerabilities.",
 )
 def __check_advisories() -> None:
     check_advisories()
