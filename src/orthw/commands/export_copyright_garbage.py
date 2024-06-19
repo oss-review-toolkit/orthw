@@ -79,6 +79,10 @@ def export_copyright_garbage() -> None:
 @command_group.command(
     name="export-copyright-garbage",
     options_metavar="SCAN_CONTEXT",
+    short_help=(
+        "Import copyright garbage from a plain text file containing one "
+        "copyright statement per line into the given copyright garbage file."
+    )
 )
 def __export_copyright_garbage() -> None:
     export_copyright_garbage()

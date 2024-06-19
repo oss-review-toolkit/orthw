@@ -42,10 +42,10 @@ class OrtHwClickGroup(click.Group):
         console.print(
             "\n[bright_white]Usage:\n"
             "\nConfiguration:\n\n"
-            f"[bright_green]Main config::[/bright_green] {config.configfile}\n"
-            f"[bright_green]Configuration home:[/bright_green] {config.configuration_home}\n"
-            f"[bright_green]Ort home:[/bright_green] {config.ort_home}\n"
-            f"[bright_green]Scancode home:[/bright_green] {config.scancode_home}\n"
+            f"[bright_green]ORTHW config file:[/bright_green] {config.configfile}\n"
+            f"[bright_green]ORT config home:[/bright_green] {config.configuration_home}\n"
+            f"[bright_green]ORT home:[/bright_green] {config.ort_home}\n"
+            f"[bright_green]ScanCode home:[/bright_green] {config.scancode_home}\n"
             f"[bright_green]Exports home:[/bright_green] {config.exports_home}\n"
             "[/bright_white]",
         )
