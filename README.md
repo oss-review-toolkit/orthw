@@ -1,7 +1,8 @@
-# The orthw script
+# The ORT Helper Wrapper (`orthw`) script
 
 `orthw` is a shell script designed to simplify and speed up common tasks performed when processing [ORT][ort]
-scan results. It supports a number of commands, which can be run in the terminal (e.g. Bash). 
+scan results. It supports a number of commands, which can be run in the terminal (e.g. Bash).
+Most of the commands are thin wrappers around the commands provided by [ORT's helper CLI](https://github.com/oss-review-toolkit/ort/tree/main/helper-cli). 
 
 For example:
 - To correct license findings in an open source dependency, you can run `orthw pc-create <package-id>`, which generates
